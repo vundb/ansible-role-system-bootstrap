@@ -5,6 +5,12 @@ system_update: yes
 
 
 #
+# System hostname.
+#
+system_hostname: "{{ inventory_hostname }}"
+
+
+#
 # Array with host entries.
 #
 # system_host_entries:
