@@ -1,0 +1,14 @@
+---
+
+- name: merge default and custom hosts entries array
+  set_fact:
+    system_host_entries_merged: "{{ system_host_entries_default | union(system_host_entries) }}"
+
+- name: write hosts entries
+  become: yes
+  lineinfile: dest="/etc/hosts"
+              regexp="^{{ item.ip }}\s{{ item.name }}"
+              line="{{ item.ip }} {{ item.name }}"
+              state="{{ item.state | default('present') }}"
+              create=yes
+  with_items: "{{ system_host_entries_merged }}"

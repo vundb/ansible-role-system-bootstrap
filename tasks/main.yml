@@ -1,0 +1,18 @@
+---
+
+# fail when distribution is not supported
+
+- name: check if distribution is supported
+  fail: msg="'{{ ansible_distribution }}' is not supported by this role"
+  when: ansible_distribution not in ["Gentoo"]
+
+
+# run os specific tasks
+
+- include: gentoo/main.yml
+  when: ansible_distribution == "Gentoo"
+
+
+# write hosts entries
+
+- include: write-host-entries.yml

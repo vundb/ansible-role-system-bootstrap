@@ -1,0 +1,21 @@
+---
+
+# check if equery is present. if not so execute required tasks
+
+- name: check if equery is present
+  become: yes
+  command: equery --version
+  register: check_equery
+  ignore_errors: yes
+  changed_when: false
+
+- include: initialize-portage.yml
+  when: check_equery.rc != 0
+
+
+# update system package tree
+
+- name: update package tree
+  become: yes
+  portage: sync="web"
+  when: system_update

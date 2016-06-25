@@ -1,0 +1,14 @@
+---
+
+# update package tree
+
+- name: update package tree
+  become: yes
+  raw: emerge --sync
+
+
+# install gentoolkit package required for ansible portage module
+
+- name: install gentoolkit
+  become: yes
+  raw: emerge app-portage/gentoolkit

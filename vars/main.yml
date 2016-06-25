@@ -1,0 +1,8 @@
+#
+# Array with default host entries
+#
+system_host_entries_default:
+  - { ip: "127.0.0.1", name: "localhost",                                           state: "present" }
+  - { ip: "::1",       name: "localhost",                                           state: "present" }
+  - { ip: "127.0.0.1", name: "{{ system_hostname | default(inventory_hostname) }}", state: "present" }
+  - { ip: "::1",       name: "{{ system_hostname | default(inventory_hostname) }}", state: "present" }
