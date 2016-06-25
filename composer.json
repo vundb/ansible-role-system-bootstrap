@@ -2,7 +2,7 @@
   "name": "vundb/ansible-role-system-bootstrap",
   "description": "Ansible role for bootstraping instances.",
   "license": "MIT",
-  "type": "ansible-role",
+  "type": "chef-role",
   "authors": [
     {
       "name": "Viktor Breitenbuecher",
