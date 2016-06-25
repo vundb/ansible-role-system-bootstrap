@@ -1,0 +1,18 @@
+{
+  "name": "vundb/ansible-role-system-bootstrap",
+  "description": "Ansible role for bootstraping instances.",
+  "license": "MIT",
+  "type": "ansible-role",
+  "authors": [
+    {
+      "name": "Viktor Breitenbuecher",
+      "email": "vic.b@outlook.com"
+    }
+  ],
+  "require": {
+    "composer/installers": "~1.0"
+  },
+  "extra": {
+    "installer-name": "system-bootstrap"
+  }
+}
