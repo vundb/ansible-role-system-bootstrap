@@ -1,0 +1,8 @@
+---
+
+# update system package tree
+
+- name: update package tree
+  become: yes
+  yum: name=* update_cache=yes
+  when: system_update
