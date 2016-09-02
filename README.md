@@ -34,7 +34,7 @@ Example Playbook
   roles:
     - role: system-bootstrap
       system_update: yes
-      system_hostname 'exaple.com'
+      system_hostname: 'exaple.com'
       system_host_entries:
         - { ip: "127.0.0.1", name: "exaple.com", state: "present" }
         - { ip: "::1",       name: "exaple.com", state: "absent" }
