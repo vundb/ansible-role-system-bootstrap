@@ -1,8 +1,14 @@
 Ansible Role for bootstraping instances
-======================================
+=======================================
 
 This role will boostraping instances, updates package tree and prepare system
 for executing further roles. Also the hostname and host entries will be set.
+
+Supported Distributions
+-----------------------
+
+- Gentoo
+- CentOS 7
 
 Requirements
 ------------
