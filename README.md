@@ -15,11 +15,6 @@ Supported Distributions
 - Gentoo
 - CentOS 7
 
-Requirements
-------------
-
-- `ansible_distribution`: ["Gentoo", "CentOS"]
-
 Role Variables
 --------------
 
