@@ -6,3 +6,8 @@
   become: yes
   yum: name=* update_cache=yes
   when: system_update
+
+
+# set system timezone
+
+- include: set-timezone.yml

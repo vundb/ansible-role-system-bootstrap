@@ -1,0 +1,23 @@
+---
+
+- name: check for timezone file
+  stat: path=/etc/timezone
+  register: timezone_file
+
+- name: remove timezone file if not symlink
+  become: yes
+  file: path=/etc/timezone state=absent
+  when: timezone_file.stat.exists and not timezone_file.stat.islnk
+
+- name: set system timezone
+  become: yes
+  file:
+    src: /usr/share/zoneinfo/{{ system_timezone }}
+    dest: /etc/localtime
+    state: link
+  register: set_timezone_state
+
+- name: reconfigure timezone
+  become: yes
+  shell: "emerge --config timezone-data"
+  when: set_timezone_state.changed

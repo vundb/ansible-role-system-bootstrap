@@ -18,3 +18,9 @@ system_hostname: "{{ inventory_hostname }}"
 #   - { ip: "::1",       name: "localhost", state: "absent" }
 #
 system_host_entries: []
+
+
+#
+# System timezone.
+#
+system_timezone: "Etc/UTC"
