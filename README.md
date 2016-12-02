@@ -9,6 +9,12 @@ The hostname and host entries will be set.
 The Timezone will be configured.
 
 
+Supported Distributions
+-----------------------
+
+- Gentoo
+- CentOS 7
+
 Requirements
 ------------
 
