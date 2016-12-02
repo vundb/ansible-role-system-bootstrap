@@ -1,0 +1,11 @@
+---
+
+# set system hostname
+
+- name: set system hostname
+  become: yes
+  hostname: name="{{ system_hostname | default(inventory_hostname) }}"
+
+- name: write hostname file
+  become: yes
+  copy: content="{{ system_hostname | default(inventory_hostname) }}\n" dest="/etc/hostname"

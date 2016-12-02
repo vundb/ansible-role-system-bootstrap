@@ -16,6 +16,11 @@
   when: ansible_distribution == "CentOS"
 
 
+# set hostname
+
+- include: set-hostname.yml
+
+
 # write hosts entries
 
 - include: write-host-entries.yml

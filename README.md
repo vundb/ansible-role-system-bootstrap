@@ -1,4 +1,4 @@
-Ansible Role for bootstraping instances
+Ansible Role System Bootstrap
 ======================================
 
 This role will boostraping instances, updates package tree and prepare system
@@ -7,7 +7,7 @@ for executing further roles. Also the hostname and host entries will be set.
 Requirements
 ------------
 
-None.
+- `ansible_distribution`: ["Gentoo", "CentOS"]
 
 Role Variables
 --------------
