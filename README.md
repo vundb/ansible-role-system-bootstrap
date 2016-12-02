@@ -1,19 +1,19 @@
-Ansible Role for bootstraping instances
-=======================================
+Ansible Role System Bootstrap
+======================================
 
 This role will boostraping instances, updates package tree and prepare system
-for executing further roles. Also the hostname and host entries will be set.
+for executing further roles.
+
+The hostname and host entries will be set.
+
+The Timezone will be configured.
+
 
 Supported Distributions
 -----------------------
 
 - Gentoo
 - CentOS 7
-
-Requirements
-------------
-
-None.
 
 Role Variables
 --------------
@@ -24,6 +24,9 @@ yes.
 
 - `system_hostname`:
 System hostname. Default will be the variable `inventory_hostname`.
+
+- `system_timezone`:
+System timezone in the timezone database format.
 
 - `system_host_entries`:
 Array with host entries. See [default vars file](defaults/main.yml)
@@ -40,7 +43,8 @@ Example Playbook
   roles:
     - role: system-bootstrap
       system_update: yes
-      system_hostname: 'exaple.com'
+      system_hostname 'exaple.com'
+      system_timezone: 'Europe/Berlin'
       system_host_entries:
         - { ip: "127.0.0.1", name: "exaple.com", state: "present" }
         - { ip: "::1",       name: "exaple.com", state: "absent" }

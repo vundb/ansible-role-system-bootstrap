@@ -19,3 +19,8 @@
   become: yes
   portage: sync="web"
   when: system_update
+
+
+# set system timezone
+
+- include: set-timezone.yml
