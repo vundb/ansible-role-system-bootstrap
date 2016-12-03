@@ -41,7 +41,7 @@ Example Playbook
 ```
 - hosts: all
   roles:
-    - role: system-bootstrap
+    - role: vundb-system-bootstrap
       system_update: yes
       system_hostname 'exaple.com'
       system_timezone: 'Europe/Berlin'
