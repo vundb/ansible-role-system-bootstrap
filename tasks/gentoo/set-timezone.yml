@@ -1,15 +1,15 @@
 ---
 
-- name: check for timezone file
-  stat: path=/etc/timezone
-  register: timezone_file
+- name: check for localtime file
+  stat: path=/etc/localtime
+  register: localtime_file
 
-- name: remove timezone file if not symlink
+- name: remove localtime file if not symlink
   become: yes
-  file: path=/etc/timezone state=absent
-  when: timezone_file.stat.exists and not timezone_file.stat.islnk
+  file: path=/etc/localtime state=absent
+  when: localtime_file.stat.exists and not localtime_file.stat.islnk
 
-- name: set system timezone
+- name: set system localtime
   become: yes
   file:
     src: /usr/share/zoneinfo/{{ system_timezone }}
