@@ -9,7 +9,7 @@
   ignore_errors: yes
   changed_when: false
 
-- include: initialize-portage.yml
+- import_tasks: initialize-portage.yml
   when: check_equery.rc != 0
 
 
@@ -23,4 +23,4 @@
 
 # set system timezone
 
-- include: set-timezone.yml
+- import_tasks: set-timezone.yml

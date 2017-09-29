@@ -4,23 +4,20 @@
 
 - name: check if distribution is supported
   fail: msg="'{{ ansible_distribution }}' is not supported by this role"
-  when: ansible_distribution not in ["Gentoo", "CentOS"]
+  when: ansible_distribution not in ["Gentoo"]
 
 
 # run os specific tasks
 
-- include: gentoo/main.yml
+- import_tasks: gentoo/main.yml
   when: ansible_distribution == "Gentoo"
-
-- include: centos/main.yml
-  when: ansible_distribution == "CentOS"
 
 
 # set hostname
 
-- include: set-hostname.yml
+- import_tasks: set-hostname.yml
 
 
 # write hosts entries
 
-- include: write-host-entries.yml
+- import_tasks: write-host-entries.yml

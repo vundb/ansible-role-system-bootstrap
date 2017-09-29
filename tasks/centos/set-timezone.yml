@@ -1,8 +1,0 @@
----
-
-- name: set system timezone
-  become: yes
-  file:
-    src: /usr/share/zoneinfo/{{ system_timezone }}
-    dest: /etc/localtime
-    state: link
