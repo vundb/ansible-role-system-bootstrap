@@ -3,6 +3,11 @@
 #
 system_update: yes
 
+#
+# Gentoo profile to select
+#
+system_profile: "default/linux/amd64/17.0"
+
 
 #
 # System hostname.

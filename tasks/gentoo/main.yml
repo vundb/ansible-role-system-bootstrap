@@ -20,6 +20,9 @@
   portage: sync="web"
   when: system_update
 
+# set system profile
+
+- import_tasks: set-profile.yml
 
 # set system timezone
 
