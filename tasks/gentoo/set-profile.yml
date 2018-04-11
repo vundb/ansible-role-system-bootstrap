@@ -1,0 +1,11 @@
+---
+
+- name: set configured profile
+  become: yes
+  shell: "eselect profile set {{ system_profile }}"
+  ignore_errors: yes
+  register: system_profile_result
+
+- name: print result
+  debug: msg="{{ ["Failed set configured profile. This error message can be ignored"] | union(system_profile_result.stderr_lines) }}"
+  when: system_profile_result.failed

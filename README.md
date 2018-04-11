@@ -21,6 +21,9 @@ Role Variables
 Perform update for system package tree. Possible values are yes or no. Default
 yes.
 
+- `system_profile`:
+Gentoo's system profile to use. Default value is `default/linux/amd64/17.0`.
+
 - `system_hostname`:
 System hostname. Default will be the variable `inventory_hostname`.
 
