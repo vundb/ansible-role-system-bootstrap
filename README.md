@@ -33,6 +33,9 @@ System timezone in the timezone database format.
 - `system_host_entries`:
 Array with host entries. See [default vars file](defaults/main.yml)
 
+- `system_locale`
+Set system wide locale. If no value is set, the default `en_US.UTF-8` will be used.
+
 Dependencies
 ------------
 

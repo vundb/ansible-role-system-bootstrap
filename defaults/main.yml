@@ -29,3 +29,8 @@ system_host_entries: []
 # System timezone.
 #
 system_timezone: "Etc/UTC"
+
+#
+# System locale.
+#
+system_locale: "en_US.UTF-8"
