@@ -21,3 +21,8 @@
 # write hosts entries
 
 - import_tasks: write-host-entries.yml
+
+
+# set locale
+
+- import_tasks: locale.yaml

@@ -1,0 +1,9 @@
+---
+
+- name: set system locale
+  become: yes
+  template:
+    src: locale.j2
+    dest: /etc/env.d/02locale
+    mode: 0644
+  notify: system - locale

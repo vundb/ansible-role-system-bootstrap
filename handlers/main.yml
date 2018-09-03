@@ -1,0 +1,5 @@
+---
+
+- name: system - locale
+  become: yes
+  shell: env-update && source /etc/profile
