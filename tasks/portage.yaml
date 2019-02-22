@@ -9,7 +9,20 @@
   ignore_errors: yes
   changed_when: false
 
-- import_tasks: initialize-portage.yml
+
+# update package tree
+
+- name: update package tree
+  become: yes
+  raw: emerge --sync
+  when: check_equery.rc != 0
+
+
+# install gentoolkit package required for ansible portage module
+
+- name: install gentoolkit
+  become: yes
+  raw: emerge app-portage/gentoolkit
   when: check_equery.rc != 0
 
 
@@ -19,11 +32,3 @@
   become: yes
   portage: sync="web"
   when: system_update
-
-# set system profile
-
-- import_tasks: set-profile.yml
-
-# set system timezone
-
-- import_tasks: set-timezone.yml

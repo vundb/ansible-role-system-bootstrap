@@ -3,3 +3,7 @@
 - name: system - locale
   become: yes
   shell: env-update && source /etc/profile
+
+- name: system - timezone
+  become: yes
+  shell: "emerge --config timezone-data"
