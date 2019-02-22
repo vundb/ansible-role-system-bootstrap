@@ -7,20 +7,24 @@
   when: ansible_distribution not in ["Gentoo"]
 
 
-# run os specific tasks
+# initialize portage
 
-- import_tasks: gentoo/main.yml
-  when: ansible_distribution == "Gentoo"
+- import_tasks: portage.yaml
+
+
+# set system timezone
+
+- import_tasks: timezone.yaml
 
 
 # set hostname
 
-- import_tasks: set-hostname.yml
+- import_tasks: hostname.yaml
 
 
 # write hosts entries
 
-- import_tasks: write-host-entries.yml
+- import_tasks: hosts.yaml
 
 
 # set locale

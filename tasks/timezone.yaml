@@ -1,5 +1,7 @@
 ---
 
+# set system timezone
+
 - name: check for localtime file
   stat: path=/etc/localtime
   register: localtime_file
@@ -15,9 +17,4 @@
     src: /usr/share/zoneinfo/{{ system_timezone }}
     dest: /etc/localtime
     state: link
-  register: set_timezone_state
-
-- name: reconfigure timezone
-  become: yes
-  shell: "emerge --config timezone-data"
-  when: set_timezone_state.changed
+  notify: system - timezone

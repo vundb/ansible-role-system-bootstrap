@@ -1,5 +1,7 @@
 ---
 
+# manage the hosts entries file
+
 - name: merge default and custom hosts entries array
   set_fact:
     system_host_entries_merged: "{{ system_host_entries_default | union(system_host_entries) }}"
