@@ -30,3 +30,8 @@
 # set locale
 
 - import_tasks: locale.yaml
+
+
+# post tasks
+
+- meta: flush_handlers
