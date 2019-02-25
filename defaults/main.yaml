@@ -30,3 +30,10 @@ system_timezone: "Etc/UTC"
 # System locale.
 #
 system_locale: "en_US.UTF-8"
+
+
+#
+# Define the makeopts flags
+# /etc/portage/make.conf
+#
+system_makeopts: "-j2"

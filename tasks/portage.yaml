@@ -18,6 +18,15 @@
   when: check_equery.rc != 0
 
 
+# write makeopts
+
+- name: write makeopts flags
+  become: yes
+  lineinfile:
+    path: /etc/portage/make.conf
+    regexp: "^MAKEOPTS="
+    line: "MAKEOPTS={{ system_makeopts }}"
+
 # install gentoolkit package required for ansible portage module
 
 - name: install gentoolkit
