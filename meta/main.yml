@@ -1,0 +1,16 @@
+galaxy_info:
+  role_name: system-bootstrap
+  author: Viktor Breitenbuecher
+  description: Bootstraping Gentoo Instances
+  company: Viktorbreitenbuecher
+  license: MIT
+  min_ansible_version: 2.0
+  platforms:
+    - name: Gentoo
+      versions:
+        - all
+  galaxy_tags:
+    - Gentoo
+    - Bootstrap
+
+dependencies: []
