@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: system-bootstrap
+  role_name: gentoo.bootstrap
   author: Viktor Breitenbuecher
   description: Bootstraping Gentoo Instances
   company: Viktorbreitenbuecher
@@ -10,7 +10,7 @@ galaxy_info:
       versions:
         - all
   galaxy_tags:
-    - Gentoo
-    - Bootstrap
+    - gentoo
+    - bootstrap
 
 dependencies: []
