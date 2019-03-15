@@ -9,27 +9,27 @@
 
 # initialize portage
 
-- import_tasks: portage.yaml
+- import_tasks: portage.yml
 
 
 # set system timezone
 
-- import_tasks: timezone.yaml
+- import_tasks: timezone.yml
 
 
 # set hostname
 
-- import_tasks: hostname.yaml
+- import_tasks: hostname.yml
 
 
 # write hosts entries
 
-- import_tasks: hosts.yaml
+- import_tasks: hosts.yml
 
 
 # set locale
 
-- import_tasks: locale.yaml
+- import_tasks: locale.yml
 
 
 # post tasks
